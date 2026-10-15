@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f4ef" />
+    <meta name="description" content="CIAMA — Centro Integrado de Apoio a Mães. Acolhimento para mães e cuidado integrado para crianças, com carinho, respeito e orientação." />
+    <title>CIAMA | Cuidar de quem cuida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --cream: #f8f4ef;
+        --paper: #fffdf9;
+        --ink: #293b37;
+        --muted: #68736d;
+        --green: #315d50;
+        --green-dark: #24483e;
+        --sage: #dce8df;
+        --coral: #d77e68;
+        --peach: #f4dfd4;
+        --gold: #d8b77b;
+        --line: rgba(41, 59, 55, 0.13);
+        --shadow: 0 20px 55px rgba(45, 64, 55, 0.11);
+        --radius: 26px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "DM Sans", sans-serif;
+        line-height: 1.65;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Manrope", sans-serif;
+        letter-spacing: -0.035em;
+        line-height: 1.12;
+      }
+      h1 {
+        font-size: clamp(2.7rem, 6vw, 5.1rem);
+        margin-bottom: 24px;
+        font-weight: 800;
+      }
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        margin-bottom: 18px;
+        font-weight: 800;
+      }
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+      p {
+        color: var(--muted);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .container {
+        width: min(1160px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--green);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 27px;
+        height: 2px;
+        background: var(--coral);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition:
+          transform 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: var(--green);
+        color: white;
+        box-shadow: 0 9px 22px rgba(49, 93, 80, 0.18);
+      }
+      .btn-primary:hover {
+        background: var(--green-dark);
+      }
+      .btn-outline {
+        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.55);
+        color: var(--ink);
+      }
+      .btn-outline:hover {
+        background: white;
+      }
+      .top-note {
+        background: var(--green-dark);
+        color: #fff;
+        text-align: center;
+        padding: 8px 16px;
+        font-size: 0.82rem;
+        letter-spacing: 0.015em;
+      }
+      .top-note strong {
+        color: #f0d6a7;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 253, 249, 0.92);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(41, 59, 55, 0.08);
+      }
+      .nav {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 190px;
+      }
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px 16px 16px 5px;
+        display: grid;
+        place-items: center;
+        color: white;
+        background: var(--green);
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+        transform: rotate(-3deg);
+      }
+      .brand-name {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+      }
+      .brand-name strong {
+        font-family: "Manrope", sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+      }
+      .brand-name small {
+        color: var(--muted);
+        font-size: 0.65rem;
+        max-width: 180px;
+        margin-top: 4px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #53635c;
+      }
+      .nav-links a:not(.btn):hover {
+        color: var(--coral);
+      }
+      .nav-links .btn {
+        padding: 11px 18px;
+        font-size: 0.88rem;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: 0;
+        font-size: 1.7rem;
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .hero {
+        overflow: hidden;
+        position: relative;
+        padding: 74px 0 82px;
+        background: var(--cream);
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        width: 490px;
+        height: 490px;
+        border-radius: 50%;
+        background: var(--peach);
+        opacity: 0.5;
+        right: -170px;
+        top: -220px;
+      }
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        align-items: center;
+        gap: 58px;
+      }
+      .hero-copy {
+        padding: 20px 0;
+      }
+      .hero h1 em {
+        color: var(--coral);
+        font-style: normal;
+      }
+      .hero-copy > p {
+        font-size: 1.1rem;
+        max-width: 550px;
+        margin-bottom: 30px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .hero-trust {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-top: 31px;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+      .trust-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: var(--green);
+        font-size: 1.15rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .hero-visual {
+        min-height: 490px;
+        position: relative;
+      }
+      .hero-photo {
+        position: absolute;
+        inset: 0 22px 16px 28px;
+        border-radius: 46% 46% 26px 26px;
+        overflow: hidden;
+        background: #e2d4c8;
+        box-shadow: var(--shadow);
+      }
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .photo-wash {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 58%, rgba(30, 49, 41, 0.35));
+        pointer-events: none;
+      }
+      .floating-note {
+        position: absolute;
+        z-index: 2;
+        background: white;
+        padding: 18px 20px;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        max-width: 220px;
+      }
+      .floating-note strong {
+        display: block;
+        font-family: "Manrope", sans-serif;
+        font-size: 1rem;
+        margin-bottom: 4px;
+      }
+      .floating-note span {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.4;
+        display: block;
+      }
+      .note-top {
+        top: 58px;
+        left: -8px;
+      }
+      .note-bottom {
+        bottom: 0;
+        right: -6px;
+      }
+      .note-symbol {
+        color: var(--coral);
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+      }
+      .section {
+        padding: 100px 0;
+      }
+      .section-head {
+        max-width: 720px;
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+      .section-head .eyebrow {
+        justify-content: center;
+      }
+      .section-head p {
+        font-size: 1.04rem;
+        margin: 0 auto;
+        max-width: 630px;
+      }
+      .mission {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .mission-image {
+        position: relative;
+        padding: 0 22px 22px 0;
+      }
+      .mission-image img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: 24px;
+        position: relative;
+        z-index: 1;
+      }
+      .mission-image::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 78%;
+        height: 76%;
+        border-radius: 24px;
+        background: var(--sage);
+      }
+      .mission-copy p {
+        font-size: 1.03rem;
+      }
+      .quote {
+        margin: 28px 0 0;
+        border-left: 3px solid var(--coral);
+        padding: 7px 0 7px 20px;
+        color: var(--green);
+        font-family: "Manrope", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+      .services {
+        background: #f3f6f1;
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .service-card {
+        padding: 30px;
+        border-radius: var(--radius);
+        background: white;
+        border: 1px solid rgba(49, 93, 80, 0.08);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+      .service-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        background: var(--sage);
+        font-size: 1.45rem;
+        margin-bottom: 23px;
+      }
+      .service-card:nth-child(2) .service-icon,
+      .service-card:nth-child(5) .service-icon {
+        background: var(--peach);
+      }
+      .service-card:nth-child(3) .service-icon,
+      .service-card:nth-child(6) .service-icon {
+        background: #f5e9c9;
+      }
+      .service-card p {
+        font-size: 0.93rem;
+        margin-bottom: 0;
+      }
+      .service-card h3 {
+        color: var(--ink);
+      }
+      .focus {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .focus-visual {
+        position: relative;
+      }
+      .focus-visual img {
+        height: 540px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+      .focus-stamp {
+        position: absolute;
+        bottom: 25px;
+        left: -20px;
+        background: var(--coral);
+        color: white;
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 18px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        line-height: 1.2;
+        transform: rotate(-8deg);
+        box-shadow: 0 12px 28px rgba(150, 76, 59, 0.2);
+      }
+      .focus-copy p {
+        font-size: 1.02rem;
+      }
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 26px 0 32px;
+        display: grid;
+        gap: 14px;
+      }
+      .check-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: #4d5d55;
+      }
+      .check-list li::before {
+        content: "✓";
+        flex: 0 0 25px;
+        height: 25px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--sage);
+        color: var(--green);
+        font-weight: 800;
+        font-size: 0.8rem;
+        margin-top: 1px;
+      }
+      .values {
+        background: var(--green-dark);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .values::after {
+        content: "♡";
+        position: absolute;
+        right: 4%;
+        top: -115px;
+        font-size: 30rem;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.035);
+        pointer-events: none;
+      }
+      .values .section-head p {
+        color: #d0ddd5;
+      }
+      .values .eyebrow {
+        color: #f2d5a1;
+      }
+      .values-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 34px;
+      }
+      .value {
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        padding-top: 23px;
+      }
+      .value-number {
+        color: #f0d6a7;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+      .value h3 {
+        color: white;
+        margin-top: 12px;
+      }
+      .value p {
+        color: #c7d5cd;
+        font-size: 0.94rem;
+      }
+      .help {
+        background: var(--cream);
+      }
+      .help-panel {
+        background: white;
+        border-radius: 32px;
+        padding: 54px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+        box-shadow: 0 10px 35px rgba(41, 59, 55, 0.05);
+      }
+      .help-panel p {
+        max-width: 580px;
+      }
+      .help-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+      }
+      .help-actions .btn {
+        width: 100%;
+      }
+      .help-small {
+        font-size: 0.78rem;
+        text-align: center;
+        margin: 4px 0 0;
+      }
+      .contact {
+        padding: 95px 0;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 70px;
+      }
+      .contact-copy p {
+        max-width: 410px;
+      }
+      .contact-details {
+        margin-top: 28px;
+        display: grid;
+        gap: 15px;
+      }
+      .contact-item {
+        display: flex;
+        gap: 13px;
+        align-items: center;
+      }
+      .contact-item .service-icon {
+        margin: 0;
+        width: 43px;
+        height: 43px;
+        border-radius: 14px;
+        font-size: 1.1rem;
+      }
+      .contact-item strong {
+        display: block;
+        font-size: 0.9rem;
+      }
+      .contact-item span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+      .contact-form {
+        background: var(--cream);
+        border-radius: 28px;
+        padding: 34px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 7px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid #dce2dc;
+        border-radius: 12px;
+        padding: 13px 14px;
+        font: inherit;
+        font-size: 0.92rem;
+        background: white;
+        color: var(--ink);
+        outline: none;
+        margin-bottom: 16px;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--green);
+        box-shadow: 0 0 0 3px rgba(49, 93, 80, 0.1);
+      }
+      textarea {
+        min-height: 115px;
+        resize: vertical;
+      }
+      .contact-form .btn {
+        width: 100%;
+      }
+      .form-note {
+        font-size: 0.78rem;
+        margin: 12px 0 0;
+      }
+      footer {
+        background: #203d34;
+        color: white;
+        padding: 38px 0;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+      }
+      footer .brand-name small {
+        color: #c1d0c8;
+      }
+      footer p {
+        color: #c1d0c8;
+        margin: 0;
+        font-size: 0.82rem;
+      }
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        font-size: 0.85rem;
+        color: #e0e8e3;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 26px;
+        padding-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        color: #b7c8bf;
+        font-size: 0.75rem;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .whatsapp-float {
+        position: fixed;
+        z-index: 40;
+        right: 22px;
+        bottom: 22px;
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #287d55;
+        color: white;
+        box-shadow: 0 8px 24px rgba(22, 74, 49, 0.28);
+        font-size: 1.5rem;
+        transition: transform 0.2s;
+      }
+      .whatsapp-float:hover {
+        transform: translateY(-3px) scale(1.04);
+      }
+      @media (max-width: 900px) {
+        .nav-links {
+          gap: 15px;
+        }
+        .nav-links a:not(.btn) {
+          display: none;
+        }
+        .hero-grid {
+          gap: 30px;
+        }
+        .hero-visual {
+          min-height: 420px;
+        }
+        .mission,
+        .focus {
+          gap: 38px;
+        }
+        .service-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .help-panel {
+          padding: 38px;
+        }
+        .contact-grid {
+          gap: 35px;
+        }
+      }
+      @media (max-width: 640px) {
+        .container {
+          width: min(100% - 32px, 500px);
+        }
+        .top-note {
+          font-size: 0.72rem;
+        }
+        .nav {
+          min-height: 72px;
+        }
+        .brand {
+          min-width: 0;
+        }
+        .brand-mark {
+          width: 41px;
+          height: 41px;
+        }
+        .brand-name strong {
+          font-size: 1.05rem;
+        }
+        .brand-name small {
+          max-width: 150px;
+          font-size: 0.59rem;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 72px;
+          left: 0;
+          right: 0;
+          padding: 18px 22px 24px;
+          background: var(--paper);
+          border-bottom: 1px solid var(--line);
+          box-shadow: 0 15px 22px rgba(0, 0, 0, 0.05);
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links a:not(.btn) {
+          display: block;
+          padding: 6px 0;
+        }
+        .nav-links .btn {
+          margin-top: 6px;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .hero {
+          padding: 45px 0 55px;
+        }
+        .hero-grid,
+        .mission,
+        .focus,
+        .help-panel,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-grid {
+          gap: 30px;
+        }
+        h1 {
+          font-size: clamp(2.55rem, 12vw, 3.7rem);
+        }
+        .hero-copy > p {
+          font-size: 1rem;
+        }
+        .hero-visual {
+          min-height: 390px;
+          margin: 0 5px;
+        }
+        .hero-photo {
+          inset: 0 14px 14px 18px;
+        }
+        .floating-note {
+          padding: 14px;
+          max-width: 175px;
+        }
+        .note-top {
+          top: 35px;
+          left: -8px;
+        }
+        .note-bottom {
+          right: -5px;
+        }
+        .section {
+          padding: 68px 0;
+        }
+        .section-head {
+          margin-bottom: 32px;
+        }
+        .mission-image img {
+          height: 350px;
+        }
+        .mission {
+          gap: 30px;
+        }
+        .service-grid,
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        .service-card {
+          padding: 25px;
+        }
+        .focus {
+          gap: 35px;
+        }
+        .focus-visual img {
+          height: 380px;
+        }
+        .focus-stamp {
+          width: 105px;
+          height: 105px;
+          left: -8px;
+          font-size: 0.85rem;
+        }
+        .values-grid {
+          gap: 26px;
+        }
+        .help-panel {
+          padding: 28px 22px;
+          gap: 20px;
+        }
+        .contact-form {
+          padding: 23px 18px;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .footer-inner,
+        .footer-bottom {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .footer-links {
+          flex-wrap: wrap;
+        }
+        .whatsapp-float {
+          right: 15px;
+          bottom: 15px;
+          width: 52px;
+          height: 52px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-note">Acolher a mãe também é cuidar da criança. <strong>Você não precisa caminhar sozinha.</strong></div>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#inicio" aria-label="CIAMA, início">
+          <span class="brand-mark">C</span>
+          <span class="brand-name"><strong>CIAMA</strong><small>Centro Integrado de Apoio a Mães</small></span>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+          <a href="#sobre">Quem somos</a>
+          <a href="#atendimentos">Atendimentos</a>
+          <a href="#mae">A mãe importa</a>
+          <a href="#contato">Contato</a>
+          <a class="btn btn-primary" href="#contato">Quero conversar <span aria-hidden="true">↗</span></a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Acolhimento que transforma</span>
+            <h1>Cuidar de quem <em>cuida.</em></h1>
+            <p>Um espaço de apoio, cuidado e esperança para mães e seus filhos. Porque por trás de cada criança existe uma mãe que também precisa ser vista, acolhida e fortalecida.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contato">Conheça a CIAMA <span aria-hidden="true">→</span></a>
+              <a class="btn btn-outline" href="#atendimentos">Como podemos ajudar?</a>
+            </div>
+            <div class="hero-trust">
+              <span class="trust-icon" aria-hidden="true">♡</span><span>Escuta sem julgamentos. Cuidado com dignidade.<br /><strong>Uma família de cada vez.</strong></span>
+            </div>
+          </div>
+          <div class="hero-visual reveal">
+            <div class="hero-photo">
+              <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1100&q=85" alt="Mãe abraçando carinhosamente sua criança" fetchpriority="high" />
+              <div class="photo-wash"></div>
+            </div>
+            <div class="floating-note note-top">
+              <div class="note-symbol">♡</div>
+              <strong>A mãe também importa</strong><span>Seu bem-estar faz parte do cuidado.</span>
+            </div>
+            <div class="floating-note note-bottom">
+              <div class="note-symbol">✳</div>
+              <strong>Cuidado integrado</strong><span>Mais apoio para a criança e para toda a família.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="container mission">
+          <div class="mission-image reveal">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=85" alt="Família compartilhando um momento de carinho" loading="lazy" />
+          </div>
+          <div class="mission-copy reveal">
+            <span class="eyebrow">Nossa missão</span>
+            <h2>Uma rede de apoio para a família inteira.</h2>
+            <p>
+              A CIAMA — Centro Integrado de Apoio a Mães — nasce do entendimento de que o cuidado não pode olhar apenas para o diagnóstico. É preciso olhar para a criança, para a mãe e para a
+              realidade que essa família vive todos os dias.
+            </p>
+            <p>
+              Apoiamos mães de crianças com autismo (TEA), TOD, TDAH e outras condições do neurodesenvolvimento, oferecendo acolhimento e acesso a uma rede de cuidado que respeita cada história e cada
+              ritmo.
+            </p>
+            <div class="quote">“Quando uma mãe é fortalecida, toda a família ganha novas possibilidades.”</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services" id="atendimentos">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Como atuamos</span>
+            <h2>Cuidado que enxerga além do diagnóstico.</h2>
+            <p>Trabalhamos para aproximar famílias de apoio especializado e construir um ambiente em que mães e crianças possam se desenvolver com acolhimento e respeito.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">♡</div>
+              <h3>Acolhimento materno</h3>
+              <p>Escuta ativa, apoio emocional e um espaço seguro para compartilhar desafios sem culpa ou julgamentos.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">✿</div>
+              <h3>Autoestima e autonomia</h3>
+              <p>Fortalecimento da identidade, dos talentos e dos projetos de vida da mulher para além da maternidade.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">◉</div>
+              <h3>Fisioterapia</h3>
+              <p>Apoio ao desenvolvimento motor e funcional da criança, respeitando suas necessidades e possibilidades.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">♫</div>
+              <h3>Fonoaudiologia</h3>
+              <p>Suporte à comunicação, à linguagem, à fala e a outras habilidades relacionadas à interação.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">✚</div>
+              <h3>Acompanhamento especializado</h3>
+              <p>Articulação com profissionais como neurologistas e outros especialistas, conforme a necessidade de cada família.</p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">☼</div>
+              <h3>Apoio psicológico</h3>
+              <p>Cuidado com a saúde emocional da mãe e da criança, considerando a família como parte importante do processo.</p>
+            </article>
+          </div>
+          <p style="text-align: center; font-size: 0.82rem; margin: 25px auto 0; max-width: 760px">
+            Os atendimentos e encaminhamentos disponíveis dependem da estrutura e da equipe da CIAMA. Entre em contato para conhecer os serviços em funcionamento.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="mae">
+        <div class="container focus">
+          <div class="focus-visual reveal">
+            <img src="https://images.unsplash.com/photo-1492724541997-5dc865305da7?auto=format&fit=crop&w=1000&q=85" alt="Mulher sorrindo em um momento de tranquilidade" loading="lazy" />
+            <div class="focus-stamp">Você também<br />merece<br />cuidado.</div>
+          </div>
+          <div class="focus-copy reveal">
+            <span class="eyebrow">O coração da CIAMA</span>
+            <h2>A mãe não pode desaparecer enquanto cuida.</h2>
+            <p>
+              Entre consultas, terapias, escola, rotina e preocupações, muitas mães deixam suas próprias necessidades para depois. Com o tempo, podem se sentir sozinhas, exaustas ou sem espaço para
+              sonhar.
+            </p>
+            <p>Na CIAMA, acreditamos que apoiar a mãe não é um extra: é parte essencial de uma rede de cuidado mais humana e sustentável.</p>
+            <ul class="check-list">
+              <li>Um espaço onde a mãe é ouvida e respeitada.</li>
+              <li>Incentivo à autoestima, à autonomia e aos vínculos comunitários.</li>
+              <li>Apoio para encontrar caminhos e recursos possíveis para sua família.</li>
+              <li>Valorização da mulher para além dos laudos e das responsabilidades.</li>
+            </ul>
+            <a class="btn btn-primary" href="#contato">Vamos conversar? <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section values">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">O que nos guia</span>
+            <h2>Mais humanidade em cada etapa.</h2>
+            <p>Nosso compromisso é construir caminhos com as famílias, nunca impor respostas prontas.</p>
+          </div>
+          <div class="values-grid">
+            <div class="value reveal">
+              <span class="value-number">01 / ACOLHER</span>
+              <h3>Escuta com respeito</h3>
+              <p>Cada mãe tem uma história. Recebemos essa história com empatia, sem comparações e sem julgamentos.</p>
+            </div>
+            <div class="value reveal">
+              <span class="value-number">02 / CONECTAR</span>
+              <h3>Cuidado em rede</h3>
+              <p>Valorizamos a colaboração entre família, comunidade e profissionais para apoiar necessidades diversas.</p>
+            </div>
+            <div class="value reveal">
+              <span class="value-number">03 / FORTALECER</span>
+              <h3>Autonomia e esperança</h3>
+              <p>Queremos que cada mãe reconheça sua força, seus direitos e as possibilidades que ainda pode construir.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section help">
+        <div class="container">
+          <div class="help-panel reveal">
+            <div>
+              <span class="eyebrow">Você pode fazer parte</span>
+              <h2>Uma comunidade que cuida junto.</h2>
+              <p>
+                O trabalho da CIAMA cresce com pessoas que acreditam no acolhimento e na dignidade das famílias. Se você precisa de apoio, quer ser voluntário, oferecer parceria ou contribuir com a
+                causa, queremos ouvir você.
+              </p>
+            </div>
+            <div class="help-actions">
+              <a class="btn btn-primary" href="#contato">Preciso de apoio <span aria-hidden="true">→</span></a>
+              <a class="btn btn-outline" href="#contato">Quero apoiar a CIAMA <span aria-hidden="true">♡</span></a>
+              <p class="help-small">Toda conversa começa com escuta e respeito.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <span class="eyebrow">Estamos aqui</span>
+            <h2>Vamos dar o primeiro passo juntas?</h2>
+            <p>Se você é mãe, familiar, profissional, voluntário ou parceiro em potencial, entre em contato. Será um prazer conhecer sua história e entender como podemos ajudar.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="service-icon" aria-hidden="true">⌖</div>
+                <div><strong>Nosso espaço</strong><span>Entre em contato para informações sobre endereço e horários.</span></div>
+              </div>
+              <div class="contact-item">
+                <div class="service-icon" aria-hidden="true">✉</div>
+                <div><strong>Fale com a equipe</strong><span>Use o formulário para iniciar uma conversa.</span></div>
+              </div>
+              <div class="contact-item">
+                <div class="service-icon" aria-hidden="true">♡</div>
+                <div><strong>Você será acolhida</strong><span>Seu contato será tratado com respeito e cuidado.</span></div>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form reveal" id="contactForm">
+            <h3>Conte um pouquinho sobre você</h3>
+            <p style="font-size: 0.88rem; margin-bottom: 24px">Preencha os campos e escolha como gostaria de se aproximar da CIAMA.</p>
+            <div class="form-row">
+              <div><label for="name">Seu nome</label><input id="name" name="name" autocomplete="name" placeholder="Como podemos chamar você?" required /></div>
+              <div><label for="phone">Telefone</label><input id="phone" name="phone" autocomplete="tel" placeholder="(00) 00000-0000" /></div>
+            </div>
+            <label for="reason">Como podemos ajudar?</label>
+            <select id="reason" name="reason" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option>Sou mãe e procuro apoio</option>
+              <option>Quero informações sobre atendimentos</option>
+              <option>Quero ser voluntário(a)</option>
+              <option>Quero propor uma parceria</option>
+              <option>Quero contribuir com a CIAMA</option>
+              <option>Outro assunto</option>
+            </select>
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" placeholder="Se quiser, conte um pouco mais (opcional)."></textarea>
+            <button class="btn btn-primary" type="submit">Preparar mensagem <span aria-hidden="true">↗</span></button>
+            <p class="form-note">Este formulário abrirá uma mensagem no WhatsApp após a configuração do número oficial da CIAMA no código do site.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <a class="brand" href="#inicio">
+            <span class="brand-mark" style="background: #f0d6a7; color: #24483e">C</span>
+            <span class="brand-name"><strong>CIAMA</strong><small>Centro Integrado de Apoio a Mães</small></span>
+          </a>
+          <p>Cuidar da mãe é cuidar de toda a família.</p>
+          <div class="footer-links"><a href="#sobre">Quem somos</a><a href="#atendimentos">Atendimentos</a><a href="#contato">Contato</a></div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> CIAMA. Todos os direitos reservados.</span><span>Feito com cuidado e propósito. ♡</span>
+        </div>
+      </div>
+    </footer>
+
+    <a class="whatsapp-float" id="whatsappFloat" href="#contato" aria-label="Entre em contato com a CIAMA" title="Fale com a CIAMA">♡</a>
+
+    <script>
+      // IMPORTANTE: substitua pelo número oficial da CIAMA, com código do país e DDD.
+      // Exemplo de formato: 5548999999999 (somente números).
+      const CIAMA_WHATSAPP = "";
+
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      menuToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        menuToggle.textContent = open ? "×" : "☰";
+      });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.textContent = "☰";
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+      const whatsappFloat = document.getElementById("whatsappFloat");
+      if (CIAMA_WHATSAPP) {
+        whatsappFloat.href = `https://wa.me/${CIAMA_WHATSAPP}`;
+        whatsappFloat.target = "_blank";
+        whatsappFloat.rel = "noopener noreferrer";
+        whatsappFloat.textContent = "☏";
+      }
+
+      document.getElementById("contactForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!CIAMA_WHATSAPP) {
+          alert("Para ativar o envio pelo WhatsApp, configure o número oficial da CIAMA na variável CIAMA_WHATSAPP, no final do arquivo index.html.");
+          return;
+        }
+        const data = new FormData(event.currentTarget);
+        const name = data.get("name").trim();
+        const phone = data.get("phone").trim() || "Não informado";
+        const reason = data.get("reason");
+        const message = data.get("message").trim() || "Não deixou mensagem adicional.";
+        const text = `Olá, CIAMA! Meu nome é ${name}.\nTelefone: ${phone}\nAssunto: ${reason}\nMensagem: ${message}`;
+        window.open(`https://wa.me/${CIAMA_WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+      });
+    </script>
+  </body>
+</html>
